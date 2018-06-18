@@ -52,7 +52,21 @@ button {
   width: 80px;
 }
 
-.playImage {
+.icon {
+  height: 25px;
+}
+
+.play {
   height: 20px;
-  width: 40px;
+}
+
+.clear {
+  width: 23px;
+  height: 23px;
+}
+
+.pause {
+  width: 23px;
+  height: 23px;
+  display: none;
 }
