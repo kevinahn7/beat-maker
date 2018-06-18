@@ -1,15 +1,36 @@
-.allBeats {
+.beatsAll {
   border: 3px black solid;
   display: grid;
-  grid-template-columns: repeat(17, 1fr);
-  grid-gap: 3px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1px;
+}
+
+.topRow {
+  border-bottom: 3px black solid;
+}
+
+.beatsRow {
+  display: grid;
+  grid-template-columns: 70px repeat(16, 1fr);
+  grid-gap: 1px;
+}
+
+.spot:nth-child(4n + 2) {
+  background-color: darkgray;
 }
 
 .cell {
   border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
 }
 
-.cellName {
-  border: 3px solid black;
+.spot {
+  background-color: lightgray;
+}
+
+.spot:hover {
+  filter: brightness(75%);
 }
