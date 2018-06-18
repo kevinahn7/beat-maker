@@ -1,26 +1,26 @@
 function loop1() {
   $("#snare .spot").each(function(i) {
-    $(this).delay(300 * i).animate({
+    $(this).delay(100 * i).animate({
       opacity: .1,
-    }, 299).animate({
+    }, 100).animate({
       opacity: 1,
     }, 0);
   });
 };
 function loop2() {
   $("#bass .spot").each(function(i) {
-    $(this).delay(300 * i).animate({
+    $(this).delay(100 * i).animate({
       opacity: .1,
-    }, 299).animate({
+    }, 100).animate({
       opacity: 1,
     }, 0);
   });
 };
 function loop3() {
   $("#hihat .spot").each(function(i) {
-    $(this).delay(300 * i).animate({
+    $(this).delay(100 * i).animate({
       opacity: .1,
-    }, 299).animate({
+    }, 100).animate({
       opacity: 1,
     }, 0);
   });
@@ -34,7 +34,7 @@ function loops() {
     loop1();
     loop2();
     loop3();
-    setTimeout(loops, 4800);
+    setTimeout(loops, 3200);
     clearTimeout();
   }
 }
@@ -56,7 +56,7 @@ $(document).ready(function() {
     letItLoop = false;
     loops();
     $(".spot").finish();
-    setTimeout(function() { $(".playButton").removeAttr("disabled")}, 4800)
+    setTimeout(function() { $(".playButton").removeAttr("disabled")}, 3200)
 
   })
 

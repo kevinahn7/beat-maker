@@ -24,7 +24,7 @@
 
 .beatsRow {
   display: grid;
-  grid-template-columns: 70px repeat(16, 1fr);
+  grid-template-columns: 70px repeat(32, 1fr);
   grid-gap: 1px;
 }
 
