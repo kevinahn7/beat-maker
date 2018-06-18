@@ -8,6 +8,7 @@
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px black solid;
+  letter-spacing: 5px;
 }
 
 .beatsAll {
@@ -47,9 +48,14 @@
   filter: brightness(60%);
 }
 
-button {
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
   height: 40px;
   width: 80px;
+  margin: 20px;
 }
 
 .icon {
