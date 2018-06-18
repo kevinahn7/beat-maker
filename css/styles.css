@@ -41,7 +41,8 @@
 }
 
 .spot {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
+  background-color: green;
 }
 
 .spot:hover {
@@ -62,6 +63,10 @@
   height: 25px;
 }
 
+.playButton {
+  display: show;
+}
+
 .play {
   height: 20px;
 }
@@ -71,8 +76,11 @@
   height: 23px;
 }
 
+.pauseButton {
+  display: none;
+}
+
 .pause {
   width: 23px;
   height: 23px;
-  display: none;
 }
