@@ -28,31 +28,36 @@ function loop3() {
 
 
 
-function loops(play) {
-  console.log(play)
-  if(play !== undefined) {
+function loops() {
+  console.log(letItLoop)
+  if(letItLoop === true) {
     loop1();
     loop2();
     loop3();
     setTimeout(loops, 4800);
+    clearTimeout();
   }
 }
 
-
-
+var letItLoop = true;
 $(document).ready(function() {
+
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
-    loops(false);
+    letItLoop = true;
+    loops();
   });
 
   $(".pauseButton").click(function() {
+    $(".playButton").attr("disabled", "disabled");
     $(".playButton").toggle();
     $(".pauseButton").toggle();
-
-    loops(undefined);
+    letItLoop = false;
+    loops();
     $(".spot").finish();
+    setTimeout(function() { $(".playButton").removeAttr("disabled")}, 4800)
+
   })
 
 

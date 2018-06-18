@@ -41,8 +41,7 @@
 }
 
 .spot {
-  /* background-color: #f2f2f2; */
-  background-color: green;
+  background-color: #a3a3a3;
 }
 
 .spot:hover {
