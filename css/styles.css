@@ -10,4 +10,9 @@
 
 .cell {
   border: 1px black solid;
+  background-color: red;
+}
+
+.selected {
+  background-color: lightblue;
 }
