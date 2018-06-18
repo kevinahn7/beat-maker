@@ -28,13 +28,12 @@ function loop3() {
 
 
 
-
 function loops(play) {
-  loop1();
-  loop2();
-  loop3();
   console.log(play)
-  if(play !== true) {
+  if(play !== undefined) {
+    loop1();
+    loop2();
+    loop3();
     setTimeout(loops, 4800);
   }
 }
@@ -52,7 +51,7 @@ $(document).ready(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
 
-    loops(true);
+    loops(undefined);
     $(".spot").finish();
   })
 
