@@ -1,0 +1,13 @@
+.allBeats {
+  border: 3px black solid;
+}
+
+.beatsRows {
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  grid-gap: 3px;
+}
+
+.cell {
+  border: 1px black solid;
+}
