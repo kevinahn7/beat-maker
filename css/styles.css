@@ -1,3 +1,15 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 30px;
+}
+
+.theHeading {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px black solid;
+}
+
 .beatsAll {
   border: 3px black solid;
   display: grid;
@@ -16,7 +28,7 @@
 }
 
 .spot:nth-child(4n + 2) {
-  background-color: darkgray;
+  filter: brightness(75%);
 }
 
 .cell {
@@ -28,9 +40,19 @@
 }
 
 .spot {
-  background-color: lightgray;
+  background-color: #f2f2f2;
 }
 
 .spot:hover {
-  filter: brightness(75%);
+  filter: brightness(60%);
+}
+
+button {
+  height: 40px;
+  width: 80px;
+}
+
+.playImage {
+  height: 20px;
+  width: 40px;
 }
