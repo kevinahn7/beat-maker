@@ -29,7 +29,7 @@
 }
 
 .spot:nth-child(4n + 2) {
-  filter: brightness(75%);
+  background-color: #828282;
 }
 
 .cell {
@@ -45,7 +45,7 @@
 }
 
 .spot:hover {
-  filter: brightness(60%);
+  filter: brightness(90%);
 }
 
 .buttons {
@@ -82,4 +82,16 @@
 .pause {
   width: 23px;
   height: 23px;
+}
+
+#snare .snare {
+  background-color: lightblue;
+}
+
+#bass .bass {
+  background: lightgreen;
+}
+
+#hihat .hihat {
+  background: lightpink;
 }
