@@ -84,14 +84,17 @@
   height: 23px;
 }
 
-#snare .snare {
+#snare .snare,
+#snare .cellName {
   background-color: lightblue;
 }
 
-#bass .bass {
+#bass .bass,
+#bass .cellName {
   background: lightgreen;
 }
 
-#hihat .hihat {
+#hihat .hihat,
+#hihat .cellName {
   background: lightpink;
 }

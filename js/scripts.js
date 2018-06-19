@@ -24,7 +24,6 @@ function playOnBeat(element, time, instrument) {
       }, time);
     }
 }
-
 function loop1() {
   if (letItLoop === true) {
     $("#snare .spot").each(function(i) {
@@ -59,11 +58,7 @@ function loop3() {
 
   });
 };
-
-
-
 function loops() {
-  // console.log(letItLoop)
   if(letItLoop === true) {
     loop1();
     loop2();
@@ -75,14 +70,12 @@ function loops() {
 let letItLoop = true;
 
 $(document).ready(function() {
-
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
     letItLoop = true;
     loops();
   });
-
   $(".pauseButton").click(function() {
     $(".playButton").attr("disabled", "disabled");
     $(".playButton").toggle();
@@ -90,16 +83,16 @@ $(document).ready(function() {
     letItLoop = false;
     loops();
     $(".spot").finish();
-    setTimeout(function() { $(".playButton").removeAttr("disabled")}, 3200)
+    setTimeout(function() {
+      $(".playButton").removeAttr("disabled")
+    }, 3200)
   });
-
   $("#snare .spot").click(function() {
     if($(this).hasClass("selected")) {
       $(this).removeClass("selected snare");
     } else {
       $(this).addClass("selected snare");
     }
-    //$(this).parent().children().css("background", "lightblue");
   });
   $("#bass .spot").click(function() {
     if($(this).hasClass("selected")) {
@@ -115,6 +108,4 @@ $(document).ready(function() {
       $(this).addClass("selected hihat");
     }
   });
-
-
 });
