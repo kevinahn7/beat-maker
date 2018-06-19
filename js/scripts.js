@@ -67,15 +67,33 @@ function loops() {
   }
 }
 
-let letItLoop = true;
+let letItLoop = false;
+
+function barBounce() {
+  if(letItLoop) {
+    $(".bars div").each(function() {
+      $(this).animate({
+        height: (Math.floor(Math.random() * 650)) + "px",
+      }, 300);
+    });
+    setTimeout(barBounce, 300);
+  } else {
+    $(".bars div").each(function() {
+      $(this).animate({
+        height: "30px",
+      }, 600);
+    });
+  }
+}
 
 $(document).ready(function() {
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
     letItLoop = true;
+    barBounce();
     loops();
-    $(".record").addClass("fa-spin");
+    $(".record, .wan").addClass("fa-spin");
   });
   $(".pauseButton").click(function() {
     $(".playButton").attr("disabled", "disabled");
@@ -87,7 +105,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(".playButton").removeAttr("disabled")
     }, 3200)
-    $(".record").removeClass("fa-spin");
+    $(".record, .wan").removeClass("fa-spin");
   });
   $("#snare .spot").click(function() {
     if($(this).hasClass("selected")) {

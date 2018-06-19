@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 .beatsAll {
   background-color: white;
 }
@@ -5,7 +10,7 @@
 .container {
   font-family: 'Montserrat', sans-serif;
   padding-top: 30px;
-  min-height: 100%;
+  height: 100%;
 }
 
 .theHeading {
@@ -107,53 +112,53 @@
 .recordImage {
   display: flex;
   justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 150px;
 }
 
 .record {
-  margin-top: 40px;
   border-radius: 50%;
   border: 5px #575756 solid;
   background-color: white;
 }
 
-.bars {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 150px;
+.bars div {
+  width: 9%;
+  background-color: lightgray;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 
 .bar1 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+  left: 10%;
 }
 
 .bar2 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+  left: 20%;
 }
 
-.bar3 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+.bar3{
+  left: 30%;
 }
 
 .bar4 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+  left: 40%;
 }
 
 .bar5 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+  left: 50%;
 }
 
 .bar6 {
-  outline: 1px black solid;
-  width: 10%;
-  background-color: white;
+  left: 60%;
+}
+
+.bar7 {
+  left: 70%;
+}
+
+.bar8 {
+  left: 80%;
 }
