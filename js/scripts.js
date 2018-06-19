@@ -75,6 +75,7 @@ $(document).ready(function() {
     $(".pauseButton").toggle();
     letItLoop = true;
     loops();
+    $(".record").addClass("fa-spin");
   });
   $(".pauseButton").click(function() {
     $(".playButton").attr("disabled", "disabled");
@@ -86,6 +87,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(".playButton").removeAttr("disabled")
     }, 3200)
+    $(".record").removeClass("fa-spin");
   });
   $("#snare .spot").click(function() {
     if($(this).hasClass("selected")) {

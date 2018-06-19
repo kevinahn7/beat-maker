@@ -1,6 +1,10 @@
+
+
 .container {
   font-family: 'Montserrat', sans-serif;
   padding-top: 30px;
+  min-height: 100%;
+  padding-bottom: 150px;
 }
 
 .theHeading {
@@ -96,5 +100,16 @@
 
 #hihat .hihat,
 #hihat .cellName {
-  background: lightpink;
+  background: salmon;
+}
+
+.recordImage {
+  display: flex;
+  justify-content: center;
+}
+
+.record {
+  margin-top: 40px;
+  border-radius: 50%;
+  border: 5px #575756 solid;
 }
