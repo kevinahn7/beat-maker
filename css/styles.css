@@ -1,10 +1,11 @@
-
+.beatsAll {
+  background-color: white;
+}
 
 .container {
   font-family: 'Montserrat', sans-serif;
   padding-top: 30px;
   min-height: 100%;
-  padding-bottom: 150px;
 }
 
 .theHeading {
@@ -112,4 +113,47 @@
   margin-top: 40px;
   border-radius: 50%;
   border: 5px #575756 solid;
+  background-color: white;
+}
+
+.bars {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 150px;
+}
+
+.bar1 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
+}
+
+.bar2 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
+}
+
+.bar3 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
+}
+
+.bar4 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
+}
+
+.bar5 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
+}
+
+.bar6 {
+  outline: 1px black solid;
+  width: 10%;
+  background-color: white;
 }
