@@ -1,37 +1,43 @@
+// function to play sounds that gets called during animation loops, piggybacks off of animation function already iteration through the rows
 function playOnBeat(element, time, instrument) {
-    if($(element).hasClass('selected')) {
-      setTimeout(function() {
-        if(instrument === "snare") {
-          var origAudio1 = document.getElementById("snareSound");
-          var newAudio1 = origAudio1.cloneNode();
-          if (letItLoop === true) {
-            newAudio1.play();
-          }
-        } else if(instrument === "bass") {
-          var origAudio2 = document.getElementById("bassSound");
-          var newAudio2 = origAudio2.cloneNode();
-          if (letItLoop === true) {
-            newAudio2.play();
-          }
-
-        } else if(instrument === "hihat") {
-          var origAudio3 = document.getElementById("hihatSound");
-          var newAudio3 = origAudio3.cloneNode();
-          if (letItLoop === true) {
-            newAudio3.play();
-          }
+  if($(element).hasClass('selected')) {
+    setTimeout(function() {
+      if(instrument === "snare") {
+        var origAudio1 = document.getElementById("snareSound");
+        var newAudio1 = origAudio1.cloneNode();
+        if (letItLoop === true) {
+          newAudio1.play();
         }
-      }, time);
-    }
+      } else if(instrument === "bass") {
+        var origAudio2 = document.getElementById("bassSound");
+        var newAudio2 = origAudio2.cloneNode();
+        if (letItLoop === true) {
+          newAudio2.play();
+        }
+      } else if(instrument === "hihat") {
+        var origAudio3 = document.getElementById("hihatSound");
+        var newAudio3 = origAudio3.cloneNode();
+        if (letItLoop === true) {
+          newAudio3.play();
+        }
+      }
+    }, time);
+  }
 }
+
+// loops that iterate through each row - ideally should be refactored into just one function that can be called on for each instrument.
 function loop1() {
+  // letItLoop was set as a global boolean so we could tell script to stop everything on pause clicks
   if (letItLoop === true) {
+    // this is why what we're doing's probably really rough, since we could have a general function with a parameter for where "#snare .spot" is called so it'd be reuseable.
     $("#snare .spot").each(function(i) {
+      // "each" method goes through each of the .spot items, variable i is declared to delay the animation between each because otherwise animations would start at the same time for all the .spots.
       $(this).delay(100 * i).animate({
         opacity: .1,
       }, 100).animate({
         opacity: 1,
       }, 0);
+      // shoving arguments into playOnBeat function that plays sounds. We ended up making it its own function so it'd run concurrently with this animation function, using "100 * i" as its "time" parameter.
       playOnBeat(this, 100 * i, "snare");
     });
   }
@@ -44,7 +50,6 @@ function loop2() {
       opacity: 1,
     }, 0);
     playOnBeat(this, 100 * i, "bass");
-
   });
 };
 function loop3() {
@@ -55,9 +60,11 @@ function loop3() {
       opacity: 1,
     }, 0);
     playOnBeat(this, 100 * i, "hihat");
-
   });
 };
+// end of trio of ghetto loops
+
+
 function loops() {
   if(letItLoop === true) {
     loop1();
@@ -74,13 +81,15 @@ function barBounce() {
     $(".bars div").each(function() {
       $(this).animate({
         height: (Math.floor(Math.random() * 650)) + "px",
+        opacity: (Math.random() + .2)
       }, 300);
+
     });
     setTimeout(barBounce, 300);
   } else {
     $(".bars div").each(function() {
       $(this).animate({
-        height: "30px",
+        height: "0",
       }, 300);
     });
   }

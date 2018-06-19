@@ -126,8 +126,8 @@ body {
 
 .bars div {
   width: 9%;
-  background-color: lightgray;
-  height: 30px;
+  /* background-color: lightgray; */
+  height: 0;
   position: absolute;
   bottom: 0;
   z-index: -1;
@@ -135,32 +135,40 @@ body {
 
 .bar1 {
   left: 10%;
+  background-color: #FFAF26;
 }
 
 .bar2 {
   left: 20%;
+  background-color: #FFDDA1
 }
 
 .bar3{
   left: 30%;
+  background-color: #03256C
 }
 
 .bar4 {
   left: 40%;
+  background-color: #335C81
 }
 
 .bar5 {
   left: 50%;
+  background-color: #1768AC
 }
 
 .bar6 {
   left: 60%;
+  background-color: #65AFFF
 }
 
 .bar7 {
   left: 70%;
+  background-color: #5899E2
 }
 
 .bar8 {
   left: 80%;
+  background-color: #008ED1
 }
