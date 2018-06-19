@@ -112,14 +112,16 @@ body {
 .recordImage {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 
 .record {
   border-radius: 50%;
   border: 5px #575756 solid;
   background-color: white;
+  width: 70%;
+  height: 70%;
+  max-width: 500px;
 }
 
 .bars div {

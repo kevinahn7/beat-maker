@@ -81,7 +81,7 @@ function barBounce() {
     $(".bars div").each(function() {
       $(this).animate({
         height: "30px",
-      }, 600);
+      }, 300);
     });
   }
 }
