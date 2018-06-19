@@ -137,4 +137,17 @@ $(document).ready(function() {
       $(this).addClass("selected hihat");
     }
   });
+
+  $(".spot").hover(function() {
+    $(this).parent().animate({
+      "opacity": ".9"
+    }, 0);
+  });
+  $(".spot").mouseout(function() {
+    $(this).parent().animate({
+      "opacity": "1"
+
+    }, 0);
+  });
+
 });
