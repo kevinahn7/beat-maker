@@ -3,14 +3,11 @@ body {
   height: 100%;
 }
 
-.beatsAll {
-  background-color: white;
-}
-
 .container {
   font-family: 'Montserrat', sans-serif;
   padding-top: 30px;
   height: 100%;
+  overflow: hidden;
 }
 
 .theHeading {
@@ -26,6 +23,8 @@ body {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 1px;
+  min-width:690px;
+  background-color: white;
 }
 
 .topRow {
