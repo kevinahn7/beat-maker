@@ -128,7 +128,6 @@ function barBounce() {
 
 let letItLoop = false;
 
-
 $(document).ready(function() {
   $(".playButton").click(function() {
     $(".playButton").toggle();
@@ -153,20 +152,8 @@ $(document).ready(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
   });
 
-  $("#snare .spot").click(function() {
-    $(this).toggleClass("selected snare");
-  });
-  $("#bass .spot").click(function() {
-    $(this).toggleClass("selected bass");
-  });
-  $("#hihat .spot").click(function() {
-    $(this).toggleClass("selected hihat");
-  });
-  $("#bongo .spot").click(function() {
-    $(this).toggleClass("selected bongo");
-  });
-  $("#keys .spot").click(function() {
-    $(this).toggleClass("selected keys");
+  $(".spot").click(function() {
+    $(this).toggleClass("selected snare bass hihat bongo keys");
   });
 
   $(".spot").hover(function() {
