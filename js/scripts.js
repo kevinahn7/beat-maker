@@ -148,6 +148,13 @@ $(document).ready(function() {
     }, 3200)
     $(".record, .smallRecord").removeClass("fa-spin");
   });
+  $(".clearButton").click(function() {
+    $(".beatsAll .spot").removeClass("selected snare bass hihat bongo tambourine");
+  });
+
+
+
+
   $("#snare .spot").click(function() {
     $(this).toggleClass("selected snare");
   });
