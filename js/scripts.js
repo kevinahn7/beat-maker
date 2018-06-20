@@ -119,8 +119,7 @@ function barBounce() {
   }
 }
 
-function Beat(name, beat){
-  this.name = name;
+function Beat() {
   this.beat = [];
   this.savedBeats = []
 }
@@ -144,8 +143,14 @@ Beat.prototype.savedArray = function (){
 let letItLoop = false;
 
 $(document).ready(function() {
+
+
+
   var beatWan = new Beat();
   var saved = 0;
+
+
+
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
@@ -172,11 +177,15 @@ $(document).ready(function() {
 
 
   $(".saveButton").click(function(){
-    beatWan.saveBeat();
-    beatWan.savedArray();
-    $(".savedBeats").show();
+    if(!$(".spot").hasClass("selected")){
+      alert("make a beat before saving")
+    } else {
+      beatWan.saveBeat();
+      beatWan.savedArray();
+      $(".savedBeats").show();
       $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
       saved++;
+    }
   });
 
   $("#listOfBeats").on('click', 'li', function(){
