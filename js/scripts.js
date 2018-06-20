@@ -189,7 +189,6 @@ $(document).ready(function() {
 
 
   $("#listOfBeats").on('click', 'li', function(){
-    console.log($(this).val());
     var chosenBeat = beatWan.savedBeats[$(this).val()];
     $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
     $(".beatsAll .spot").each(function(i){
