@@ -122,7 +122,8 @@ function barBounce() {
     $(".bars div").each(function() {
       $(this).animate({
         height: "0",
-      }, 200);
+        opacity: 0
+      }, 700);
     });
   }
 }
