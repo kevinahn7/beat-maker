@@ -108,6 +108,16 @@ body {
   background: salmon;
 }
 
+#bongo .bongo,
+#bongo .cellName {
+  background: #c7a3e0;
+}
+
+#tambourine .tambourine,
+#tambourine .cellName {
+  background: #e5e837;
+}
+
 .recordImage {
   display: flex;
   justify-content: center;

@@ -20,7 +20,20 @@ function playOnBeat(element, time, instrument) {
         if (letItLoop === true) {
           newAudio3.play();
         }
+      } else if(instrument === "bongo") {
+        var origAudio4 = document.getElementById("bongoSound");
+        var newAudio4 = origAudio4.cloneNode();
+        if (letItLoop === true) {
+          newAudio4.play();
+        }
+      } else if(instrument === "tambourine") {
+        var origAudio5 = document.getElementById("tambourineSound");
+        var newAudio5 = origAudio5.cloneNode();
+        if (letItLoop === true) {
+          newAudio5.play();
+        }
       }
+//Insert here for new instruments
     }, time);
   }
 }
@@ -61,13 +74,34 @@ function loop3() {
     playOnBeat(this, 100 * i, "hihat");
   });
 };
-// end of trio of ghetto loops
+function loop4() {
+  $("#bongo .spot").each(function(i) {
+    $(this).delay(100 * i).animate({
+      opacity: .1,
+    }, 100).animate({
+      opacity: 1,
+    }, 0);
+    playOnBeat(this, 100 * i, "bongo");
+  });
+};
+function loop5() {
+  $("#tambourine .spot").each(function(i) {
+    $(this).delay(100 * i).animate({
+      opacity: .1,
+    }, 100).animate({
+      opacity: 1,
+    }, 0);
+    playOnBeat(this, 100 * i, "tambourine");
+  });
+};
 
 function loops() {
   if(letItLoop === true) {
     loop1();
     loop2();
     loop3();
+    loop4();
+    loop5();
     setTimeout(loops, 3200);
   }
 }
@@ -133,6 +167,20 @@ $(document).ready(function() {
       $(this).removeClass("selected hihat");
     } else {
       $(this).addClass("selected hihat");
+    }
+  });
+  $("#bongo .spot").click(function() {
+    if($(this).hasClass("selected")) {
+      $(this).removeClass("selected bongo");
+    } else {
+      $(this).addClass("selected bongo");
+    }
+  });
+  $("#tambourine .spot").click(function() {
+    if($(this).hasClass("selected")) {
+      $(this).removeClass("selected tambourine");
+    } else {
+      $(this).addClass("selected tambourine");
     }
   });
 
