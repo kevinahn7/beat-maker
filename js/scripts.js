@@ -25,6 +25,7 @@ function playOnBeat(element, time, instrument) {
         if (letItLoop === true) {
           newAudio4.play();
         }
+
       } else if(instrument === "keys") {
         var origAudio5 = document.getElementById("keysSound");
         var newAudio5 = origAudio5.cloneNode();
@@ -67,6 +68,7 @@ function loop3() {
     playOnBeat(this, 100 * i, "hihat");
   });
 };
+
 function loop4() {
   $("#bongo .spot").each(function(i) {
     $(this).delay(100 * i).animate({
@@ -76,6 +78,7 @@ function loop4() {
     }, 0);
     playOnBeat(this, 100 * i, "bongo");
   });
+
 };
 function loop5() {
   $("#keys .spot").each(function(i) {
@@ -119,9 +122,35 @@ function barBounce() {
   }
 }
 
+
 let letItLoop = false;
 
+function Beat(name, beat){
+  this.name = name;
+  this.beat = [];
+  this.savedBeats = []
+}
+
+Beat.prototype.saveBeat = function (){
+  var beatArray = [];
+  $(".beatsAll .spot").each(function(){
+    if($(this).hasClass("selected")){
+      beatArray.push("selected");
+    } else {
+      beatArray.push("no");
+    }
+  });
+  this.beat = beatArray;
+}
+
+Beat.prototype.savedArray = function (){
+  this.savedBeats.push(this.beat);
+}
+
+
 $(document).ready(function() {
+  var beatWan = new Beat();
+  var saved = 0;
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
@@ -143,11 +172,46 @@ $(document).ready(function() {
   });
   $(".clearButton").click(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
+
+  $(".saveButton").click(function(){
+    beatWan.saveBeat();
+    beatWan.savedArray();
+    $(".savedBeats").show();
+      $("#listOfBeats").append("<li value='" + saved + "'>"+ saved + " beat" + "</li>");
+      saved++;
+      console.log(beatWan);
+  });
+
+
+  $("#listOfBeats").on('click', 'li', function(){
+    var chosenBeat = beatWan.savedBeats[$(this).val()];
+    $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
+    $(".beatsAll .spot").each(function(i){
+        if(chosenBeat[i] === "selected") {
+        $(this).addClass("selected");
+      }
+    });
   });
 
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");
   });
+  // Bongo Click Function BEGINNING
+   $("#bongo .spot").click(function() {
+     if($(this).hasClass("selected")) {
+       $(this).removeClass("selected bongo");
+     } else {
+       $(this).addClass("selected bongo");
+     }
+   });   // Bongo Click Function Ending
+   // tambourine Click Function BEGINNING
+   $("#tambourine .spot").click(function() {
+     if($(this).hasClass("selected")) {
+       $(this).removeClass("selected tambourine");
+     } else {
+       $(this).addClass("selected tambourine");
+     }
+   });   // tambourine Click Function Ending
 
   $(".spot").hover(function() {
     $(this).parent().animate({

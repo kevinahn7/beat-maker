@@ -104,6 +104,11 @@ body {
   height: 23px;
 }
 
+.save {
+  width: 23px;
+  height: 23px;
+}
+
 #snare .snare,
 #snare .cellName {
   background-color: lightblue;
@@ -190,4 +195,8 @@ body {
 .bar8 {
   left: 80%;
   background-color: #008ED1
+}
+
+.savedBeats {
+  display: none;
 }
