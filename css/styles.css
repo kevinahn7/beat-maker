@@ -15,7 +15,11 @@ body {
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px black solid;
-  letter-spacing: 5px;
+  letter-spacing: 7px;
+}
+
+.smallRecord {
+  margin: 0 5px;
 }
 
 .beatsAll {

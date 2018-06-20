@@ -134,7 +134,7 @@ $(document).ready(function() {
     letItLoop = true;
     barBounce();
     loops();
-    $(".record, .wan").addClass("fa-spin");
+    $(".record, .smallRecord").addClass("fa-spin");
   });
   $(".pauseButton").click(function() {
     $(".playButton").attr("disabled", "disabled");
@@ -146,7 +146,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(".playButton").removeAttr("disabled")
     }, 3200)
-    $(".record, .wan").removeClass("fa-spin");
+    $(".record, .smallRecord").removeClass("fa-spin");
   });
   $("#snare .spot").click(function() {
     if($(this).hasClass("selected")) {
