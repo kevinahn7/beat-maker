@@ -132,9 +132,9 @@ function barBounce() {
 }
 
 function Beat(name, beat){
-  this.name = name
+  this.name = name;
   this.beat = [];
-
+  this.savedBeats = []
 }
 
 Beat.prototype.saveBeat = function (){
@@ -149,10 +149,13 @@ Beat.prototype.saveBeat = function (){
   this.beat = beatArray;
 }
 
+Beat.prototype.savedArray = function (){
+  this.savedBeats.push(this.beat);
+}
 
 
 $(document).ready(function() {
-  var beat = new Beat("beat");
+  var beat = new Beat();
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
@@ -181,19 +184,18 @@ $(document).ready(function() {
 
   $(".saveButton").click(function(){
     beat.saveBeat();
-    console.log(beat);
+    beat.savedArray();
     $(".savedBeats").show();
     $("#listOfBeats").append("<li>" + beat.name + "</li>");
+
+    console.log(beat);
   });
 
   $("ul#listOfBeats").last().click(function(){
     console.log("click");
     $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
     $(".beatsAll .spot").each(function(i){
-      console.log("agg");
-      console.log(i);
       if(beat.beat[i] === "selected") {
-        // debugger;
         $(this).addClass("selected");
       }
     });
