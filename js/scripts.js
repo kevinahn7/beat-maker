@@ -114,15 +114,15 @@ function barBounce() {
       $(this).animate({
         height: (Math.floor(Math.random() * 650)) + "px",
         opacity: (Math.random() + .2)
-      }, 300);
+      }, 350);
 
     });
-    setTimeout(barBounce, 300);
+    setTimeout(barBounce, 400);
   } else {
     $(".bars div").each(function() {
       $(this).animate({
         height: "0",
-      }, 300);
+      }, 200);
     });
   }
 }
