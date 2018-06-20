@@ -20,6 +20,18 @@ function playOnBeat(element, time, instrument) {
         if (letItLoop === true) {
           newAudio3.play();
         }
+      } else if(instrument === "bongo") {
+        var origAudio4 = document.getElementById("bongoSound");
+        var newAudio4 = origAudio4.cloneNode();
+        if (letItLoop === true) {
+          newAudio4.play();
+        }
+      } else if(instrument === "tambourine") {
+        var origAudio5 = document.getElementById("tambourineSound");
+        var newAudio5 = origAudio5.cloneNode();
+        if (letItLoop === true) {
+          newAudio5.play();
+        }
       }
     }, time);
   }
@@ -62,6 +74,28 @@ function loop3() {
     playOnBeat(this, 100 * i, "hihat");
   });
 };
+
+function loop4() {
+  $("#bongo .spot").each(function(i) {
+    $(this).delay(100 * i).animate({
+      opacity: .1,
+    }, 100).animate({
+      opacity: 1,
+    }, 0);
+    playOnBeat(this, 100 * i, "bongo");
+  });
+}; // Loop4 Ending CURLY
+
+function loop5() {
+  $("#tambourine .spot").each(function(i) {
+    $(this).delay(100 * i).animate({
+      opacity: .1,
+    }, 100).animate({
+      opacity: 1,
+    }, 0);
+    playOnBeat(this, 100 * i, "tambourine");
+  });
+}; // Loop2 Ending CURLY
 // end of trio of ghetto loops
 
 
@@ -70,6 +104,8 @@ function loops() {
     loop1();
     loop2();
     loop3();
+    loop4();
+    loop5();
     setTimeout(loops, 3200);
   }
 }
@@ -95,13 +131,39 @@ function barBounce() {
   }
 }
 
+function Beat(name, beat){
+  this.name = name
+  this.beat = [];
+
+}
+
+Beat.prototype.saveBeat = function (){
+  var beatArray = [];
+  $(".beatsAll .spot").each(function(){
+    if($(this).hasClass("selected")){
+      beatArray.push("selected");
+    } else {
+      beatArray.push("no");
+    }
+  });
+  this.beat = beatArray;
+}
+
+
+
 $(document).ready(function() {
+  var beat = new Beat("beat");
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
     letItLoop = true;
     barBounce();
     loops();
+
+// array ofSavedBeats = [beat1, ...];
+// ofSavedBeats[3]
+// [i]
+
     $(".record, .wan").addClass("fa-spin");
   });
   $(".pauseButton").click(function() {
@@ -116,6 +178,30 @@ $(document).ready(function() {
     }, 3200)
     $(".record, .wan").removeClass("fa-spin");
   });
+
+  $(".saveButton").click(function(){
+    beat.saveBeat();
+    console.log(beat);
+    $(".savedBeats").show();
+    $("#listOfBeats").append("<li>" + beat.name + "</li>");
+  });
+
+  $("ul#listOfBeats").last().click(function(){
+    console.log("click");
+    $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
+    $(".beatsAll .spot").each(function(i){
+      console.log("agg");
+      console.log(i);
+      if(beat.beat[i] === "selected") {
+        // debugger;
+        $(this).addClass("selected");
+      }
+    });
+
+    $(".beatsAll .spot").addClass()
+
+  });
+
   $("#snare .spot").click(function() {
     if($(this).hasClass("selected")) {
       $(this).removeClass("selected snare");
@@ -137,6 +223,22 @@ $(document).ready(function() {
       $(this).addClass("selected hihat");
     }
   });
+  // Bongo Click Function BEGINNING
+   $("#bongo .spot").click(function() {
+     if($(this).hasClass("selected")) {
+       $(this).removeClass("selected bongo");
+     } else {
+       $(this).addClass("selected bongo");
+     }
+   });   // Bongo Click Function Ending
+   // tambourine Click Function BEGINNING
+   $("#tambourine .spot").click(function() {
+     if($(this).hasClass("selected")) {
+       $(this).removeClass("selected tambourine");
+     } else {
+       $(this).addClass("selected tambourine");
+     }
+   });   // tambourine Click Function Ending
 
   $(".spot").hover(function() {
     $(this).parent().animate({

@@ -13,6 +13,10 @@
   <audio src="sounds/snare-808.wav" preload="auto" id="snareSound"></audio>
   <audio src="sounds/edm-kick-01.wav" preload="auto" id="bassSound"></audio>
   <audio src="sounds/edm-hihat-11.wav" preload="auto" id="hihatSound"></audio>
+  <!-- Adding in new sound clips -->
+<audio src="sounds/major.mp3" preload="auto" id="bongoSound"></audio>
+<audio src="sounds/cowbell-808.wav" preload="auto" id="tambourineSound"></audio>
+<!-- Adding in new sound clips -->
 
 
 
@@ -23,6 +27,12 @@
       <h1 class="theHeading">Beat<img class="icon wan" src="img/wan.png">Maker</h1>
     </header>
     <main>
+      <div class="savedBeats">
+        <h2>Save your beats</h2>
+        <ul id="listOfBeats">
+
+        </ul>
+      </div>
       <div class="beatsAll">
         <div class="beatsRow topRow">
           <div class="cell cellName top"><img class="icon" alt="A picture of a music note" src="img/note.png"></div>
@@ -164,11 +174,86 @@
           <div class="cell spot"></div>
           <div class="cell spot"></div>
         </div>
+
+        <div class="beatsRow" id="bongo">
+        <div class="cell cellName"><img class="icon" alt="A picture of another instrument" src="img/bongo.png"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+      </div>   <!-- BONGO DIV Ending -->
+
+      <div class="beatsRow" id="tambourine">
+        <div class="cell cellName"><img class="icon" alt="A picture of tambourine" src="img/tambourine.png"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+        <div class="cell spot"></div>
+      </div>     <!-- tambourine DIV Ending -->
+
       </div>
       <div class="buttons">
         <button class="btn btn-info playButton"><img class="play" src="img/play.svg" alt="picture of a play icon"></button>
         <button class="btn btn-info pauseButton"><img class="pause" src="img/pause.png" alt="picture of a pause icon"></button>
         <a href="index.html"><button class="btn btn-warning clearButton"><img class="clear" src="img/clear.png" alt="picture of an X to clear"></button></a>
+        <button class="btn btn-danger saveButton"><img class="save" src="img/save.png" alt="picture of a save icon"></button>
+
       </div>
 
       <div class="recordImage">

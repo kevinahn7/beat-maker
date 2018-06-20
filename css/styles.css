@@ -93,6 +93,11 @@ body {
   height: 23px;
 }
 
+.save {
+  width: 23px;
+  height: 23px;
+}
+
 #snare .snare,
 #snare .cellName {
   background-color: lightblue;
@@ -106,6 +111,19 @@ body {
 #hihat .hihat,
 #hihat .cellName {
   background: salmon;
+}
+
+/* BONGO CSS  */
+#bongo .bongo,
+#bongo .cellName {
+  background: #c7a3e0;
+}
+
+/* tambourine CSS  */
+
+#tambourine .tambourine,
+#tambourine .cellName {
+  background: #e5e837;
 }
 
 .recordImage {
@@ -170,4 +188,12 @@ body {
 .bar8 {
   left: 80%;
   background-color: #008ED1
+}
+
+.savedBeats {
+  display: none;
+}
+
+.cellname, .selected {
+  background-color: pink !important;
 }
