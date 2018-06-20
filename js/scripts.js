@@ -106,8 +106,6 @@ function loops() {
   }
 }
 
-let letItLoop = false;
-
 function barBounce() {
   if(letItLoop) {
     $(".bars div").each(function() {
@@ -128,6 +126,8 @@ function barBounce() {
   }
 }
 
+let letItLoop = false;
+
 $(document).ready(function() {
   $(".playButton").click(function() {
     $(".playButton").toggle();
@@ -142,7 +142,6 @@ $(document).ready(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
     letItLoop = false;
-    loops();
     $(".spot").finish();
     setTimeout(function() {
       $(".playButton").removeAttr("disabled")
@@ -150,39 +149,19 @@ $(document).ready(function() {
     $(".record, .smallRecord").removeClass("fa-spin");
   });
   $("#snare .spot").click(function() {
-    if($(this).hasClass("selected")) {
-      $(this).removeClass("selected snare");
-    } else {
-      $(this).addClass("selected snare");
-    }
+    $(this).toggleClass("selected snare");
   });
   $("#bass .spot").click(function() {
-    if($(this).hasClass("selected")) {
-      $(this).removeClass("selected bass");
-    } else {
-      $(this).addClass("selected bass");
-    }
+    $(this).toggleClass("selected bass");
   });
   $("#hihat .spot").click(function() {
-    if($(this).hasClass("selected")) {
-      $(this).removeClass("selected hihat");
-    } else {
-      $(this).addClass("selected hihat");
-    }
+    $(this).toggleClass("selected hihat");
   });
   $("#bongo .spot").click(function() {
-    if($(this).hasClass("selected")) {
-      $(this).removeClass("selected bongo");
-    } else {
-      $(this).addClass("selected bongo");
-    }
+    $(this).toggleClass("selected bongo");
   });
   $("#tambourine .spot").click(function() {
-    if($(this).hasClass("selected")) {
-      $(this).removeClass("selected tambourine");
-    } else {
-      $(this).addClass("selected tambourine");
-    }
+    $(this).toggleClass("selected tambourine");
   });
 
   $(".spot").hover(function() {
