@@ -180,5 +180,18 @@ $(document).ready(function() {
     }, 0);
   });
 
-
+  $(".spot").mousedown(function() {
+    $(".spot").mouseenter(function() {
+      $(this).addClass("selected snare bass hihat bongo keys");
+      $(document).mouseup(function() {
+        $(".spot").off('mouseenter');
+      })
+    });
+    $(".spot").mouseleave(function() {
+      $(this).addClass("selected snare bass hihat bongo keys");
+      $(document).mouseup(function() {
+        $(".spot").off('mouseleave');
+      })
+    });
+  });
 });
