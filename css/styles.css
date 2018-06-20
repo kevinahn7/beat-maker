@@ -191,3 +191,12 @@ body {
   left: 80%;
   background-color: #008ED1
 }
+
+.save {
+  width: 23px;
+  height: 23px;
+}
+
+.savedBeats {
+  display: none;
+}

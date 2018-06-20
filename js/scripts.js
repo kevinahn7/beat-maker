@@ -182,10 +182,10 @@ $(document).ready(function() {
 
   $("#listOfBeats").on('click', 'li', function(){
     var chosenBeat = beatWan.savedBeats[$(this).val()];
-    $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
+    $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
     $(".beatsAll .spot").each(function(i){
         if(chosenBeat[i] === "selected") {
-        $(this).addClass("selected");
+        $(this).addClass("selected snare bass hihat bongo keys");
       }
     });
   });
