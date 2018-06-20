@@ -155,18 +155,14 @@ Beat.prototype.savedArray = function (){
 
 
 $(document).ready(function() {
-  var beat = new Beat();
+  var beatWan = new Beat();
+  var saved = 0;
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
     letItLoop = true;
     barBounce();
     loops();
-
-// array ofSavedBeats = [beat1, ...];
-// ofSavedBeats[3]
-// [i]
-
     $(".record, .wan").addClass("fa-spin");
   });
   $(".pauseButton").click(function() {
@@ -183,25 +179,25 @@ $(document).ready(function() {
   });
 
   $(".saveButton").click(function(){
-    beat.saveBeat();
-    beat.savedArray();
+    beatWan.saveBeat();
+    beatWan.savedArray();
     $(".savedBeats").show();
-    $("#listOfBeats").append("<li>" + beat.name + "</li>");
-
-    console.log(beat);
+      $("#listOfBeats").append("<li value='" + saved + "'>"+ saved + " beat" + "</li>");
+      saved++;
+      console.log(beatWan);
   });
 
-  $("ul#listOfBeats").last().click(function(){
-    console.log("click");
+
+  $("#listOfBeats").on('click', 'li', function(){
+    console.log($(this).val());
     $(".beatsAll .spot").removeClass("selected snare bass hihat tambourine bongo");
     $(".beatsAll .spot").each(function(i){
-      if(beat.beat[i] === "selected") {
+      beatWan.savedBeats[$(this).val()];
+        if(beatWan.beat[i] === "selected") {
+
         $(this).addClass("selected");
       }
     });
-
-    $(".beatsAll .spot").addClass()
-
   });
 
   $("#snare .spot").click(function() {
