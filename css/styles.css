@@ -35,6 +35,7 @@ body {
   grid-gap: 1px;
   min-width:690px;
   background-color: white;
+  border-radius: 1%;
 }
 
 .topRow {
