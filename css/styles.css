@@ -21,7 +21,7 @@ body {
   padding-bottom: 15px;
   border-bottom: 1px black solid;
   letter-spacing: 7px;
-  margin-left: 40px;
+  padding-left: 40px;
 }
 
 .smallRecord {
