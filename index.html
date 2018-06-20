@@ -1,89 +1,275 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Beat Maker</title>
+  <link rel="shortcut icon" href="img/note.ico">
+  <title>Beat Wans</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
+  <audio src="sounds/snare-808.wav" preload="auto" id="snareSound"></audio>
+  <audio src="sounds/edm-kick-01.wav" preload="auto" id="bassSound"></audio>
+  <audio src="sounds/edm-hihat-11.wav" preload="auto" id="hihatSound"></audio>
+
+  <!-- Adding in new sound clips -->
+  <audio src="sounds/major.mp3" preload="auto" id="bongoSound"></audio>
+  <audio src="sounds/cowbell-808.wav" preload="auto" id="tambourineSound"></audio>
+  <!-- Adding in new sound clips -->
+
+
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Beat Maker</h1>
-      <h2>The best beat maker ever</h2>
+      <h1 class="theHeading">Beat<img class="icon wan" src="img/wan.png">Maker</h1>
     </header>
     <main>
-      <div class="allBeats">
-        <div class="beatsRows">
-          <div class="cell cellName">Snare Drum</div>
-          <div class="cell spot">1</div>
-          <div class="cell spot">2</div>
-          <div class="cell spot">3</div>
-          <div class="cell spot">4</div>
-          <div class="cell spot">5</div>
-          <div class="cell spot">6</div>
-          <div class="cell spot">7</div>
-          <div class="cell spot">8</div>
-          <div class="cell spot">9</div>
-          <div class="cell spot">10</div>
-          <div class="cell spot">11</div>
-          <div class="cell spot">12</div>
-          <div class="cell spot">13</div>
-          <div class="cell spot">14</div>
-          <div class="cell spot">15</div>
-          <div class="cell spot">16</div>
-        </div>
-        <div class="beatsRows">
-          <div class="cell cellName">Bass Drum</div>
-          <div class="cell spot">1</div>
-          <div class="cell spot">2</div>
-          <div class="cell spot">3</div>
-          <div class="cell spot">4</div>
-          <div class="cell spot">5</div>
-          <div class="cell spot">6</div>
-          <div class="cell spot">7</div>
-          <div class="cell spot">8</div>
-          <div class="cell spot">9</div>
-          <div class="cell spot">10</div>
-          <div class="cell spot">11</div>
-          <div class="cell spot">12</div>
-          <div class="cell spot">13</div>
-          <div class="cell spot">14</div>
-          <div class="cell spot">15</div>
-          <div class="cell spot">16</div>
-        </div>
-        <div class="beatsRows">
-          <div class="cell cellName">Cymbal</div>
-          <div class="cell spot">1</div>
-          <div class="cell spot">2</div>
-          <div class="cell spot">3</div>
-          <div class="cell spot">4</div>
-          <div class="cell spot">5</div>
-          <div class="cell spot">6</div>
-          <div class="cell spot">7</div>
-          <div class="cell spot">8</div>
-          <div class="cell spot">9</div>
-          <div class="cell spot">10</div>
-          <div class="cell spot">11</div>
-          <div class="cell spot">12</div>
-          <div class="cell spot">13</div>
-          <div class="cell spot">14</div>
-          <div class="cell spot">15</div>
-          <div class="cell spot">16</div>
-        </div>
+      <div class="beatsAll">
 
+        <div class="beatsRow topRow">
+          <div class="cell cellName top"><img class="icon" alt="A picture of a music note" src="img/note.png"></div>
+          <div class="cell top">1</div>
+          <div class="cell top">2</div>
+          <div class="cell top">3</div>
+          <div class="cell top">4</div>
+          <div class="cell top">5</div>
+          <div class="cell top">6</div>
+          <div class="cell top">7</div>
+          <div class="cell top">8</div>
+          <div class="cell top">9</div>
+          <div class="cell top">10</div>
+          <div class="cell top">11</div>
+          <div class="cell top">12</div>
+          <div class="cell top">13</div>
+          <div class="cell top">14</div>
+          <div class="cell top">15</div>
+          <div class="cell top">16</div>
+          <div class="cell top">17</div>
+          <div class="cell top">18</div>
+          <div class="cell top">19</div>
+          <div class="cell top">20</div>
+          <div class="cell top">21</div>
+          <div class="cell top">22</div>
+          <div class="cell top">23</div>
+          <div class="cell top">24</div>
+          <div class="cell top">25</div>
+          <div class="cell top">26</div>
+          <div class="cell top">27</div>
+          <div class="cell top">28</div>
+          <div class="cell top">29</div>
+          <div class="cell top">30</div>
+          <div class="cell top">31</div>
+          <div class="cell top">32</div>
+        </div> <!-- Toprow DIV Ending -->
 
+        <div class="beatsRow" id="snare">
+          <div class="cell cellName"><img class="icon" alt="A picture of a snare drum" src="img/snare.png"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+        </div>   <!-- SNARE DIV Ending -->
 
+        <div class="beatsRow" id="bass">
+          <div class="cell cellName"><img class="icon" alt="A picture of a bass drum" src="img/bass.png"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+        </div>   <!-- BASS DIV Ending -->
+
+        <div class="beatsRow" id="hihat">
+          <div class="cell cellName"><img class="icon" alt="A picture of hi-hats" src="img/hihat.png"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+        </div>     <!-- HiHat DIV Ending -->
+
+        <div class="beatsRow" id="bongo">
+          <div class="cell cellName"><img class="icon" alt="A picture of another instrument" src="img/bongo.png"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+        </div>   <!-- BONGO DIV Ending -->
+
+        <div class="beatsRow" id="tambourine">
+          <div class="cell cellName"><img class="icon" alt="A picture of tambourine" src="img/tambourine.png"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+          <div class="cell spot"></div>
+        </div>     <!-- tambourine DIV Ending -->
+
+      </div>       <!-- WRAP Beats All DIV Ending -->
+
+      <div class="buttons">
+        <button class="btn btn-info playButton"><img class="play" src="img/play.svg" alt="picture of a play icon"></button>
+        <button class="btn btn-info pauseButton"><img class="pause" src="img/pause.png" alt="picture of a pause icon"></button>
+        <a href="index.html"><button class="btn btn-warning clearButton"><img class="clear" src="img/clear.png" alt="picture of an X to clear"></button></a>
       </div>
 
-
+      <div class="recordImage">
+        <img src="img/record.png" class="record">
+      </div>
     </main>
     <footer>
-
-
+      <div class="bars">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+        <div class="bar7"></div>
+        <div class="bar8"></div>
+      </div>
     </footer>
-  </div>
+  </div>   <!-- Container DIV Ending -->
+
 </body>
 </html>

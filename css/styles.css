@@ -1,13 +1,191 @@
-.allBeats {
-  border: 3px black solid;
+html,
+body {
+  height: 100%;
 }
 
-.beatsRows {
+.container {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 30px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.theHeading {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px black solid;
+  letter-spacing: 5px;
+}
+
+.beatsAll {
+  border: 3px black solid;
   display: grid;
-  grid-template-columns: repeat(17, 1fr);
-  grid-gap: 3px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1px;
+  min-width:690px;
+  background-color: white;
+}
+
+.topRow {
+  border-bottom: 3px black solid;
+}
+
+.beatsRow {
+  display: grid;
+  grid-template-columns: 70px repeat(32, 1fr);
+  grid-gap: 1px;
+}
+
+.spot:nth-child(4n + 2) {
+  background-color: #828282;
 }
 
 .cell {
   border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.spot {
+  background-color: #a3a3a3;
+}
+
+.spot:hover {
+  filter: brightness(90%);
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  height: 40px;
+  width: 80px;
+  margin: 20px;
+}
+
+.icon {
+  height: 25px;
+}
+
+.playButton {
+  display: show;
+}
+
+.play {
+  height: 20px;
+}
+
+.clear {
+  width: 23px;
+  height: 23px;
+}
+
+.pauseButton {
+  display: none;
+}
+
+.pause {
+  width: 23px;
+  height: 23px;
+}
+
+/* SNARE CSS  */
+#snare .snare,
+#snare .cellName {
+  background-color: lightblue;
+}
+
+/* BASS CSS  */
+#bass .bass,
+#bass .cellName {
+  background: lightgreen;
+}
+
+
+/* HIHAT CSS  */
+
+#hihat .hihat,
+#hihat .cellName {
+  background: salmon;
+}
+
+/* BONGO CSS  */
+#bongo .bongo,
+#bongo .cellName {
+  background: #c7a3e0;
+}
+
+/* tambourine CSS  */
+
+#tambourine .tambourine,
+#tambourine .cellName {
+  background: #e5e837;
+}
+
+.recordImage {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.record {
+  border-radius: 50%;
+  border: 5px #575756 solid;
+  background-color: white;
+  width: 70%;
+  height: 70%;
+  max-width: 500px;
+}
+
+.bars div {
+  width: 9%;
+  /* background-color: lightgray; */
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.bar1 {
+  left: 10%;
+  background-color: #FFAF26;
+}
+
+.bar2 {
+  left: 20%;
+  background-color: #FFDDA1
+}
+
+.bar3{
+  left: 30%;
+  background-color: #e0de9f
+}
+
+.bar4 {
+  left: 40%;
+  background-color: #c3d893
+}
+
+.bar5 {
+  left: 50%;
+  background-color: #c4f2d9
+}
+
+.bar6 {
+  left: 60%;
+  background-color: #98cfd3
+}
+
+.bar7 {
+  left: 70%;
+  background-color: #5899E2
+}
+
+.bar8 {
+  left: 80%;
+  background-color: #008ED1
 }
