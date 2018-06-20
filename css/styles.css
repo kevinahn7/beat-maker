@@ -1,7 +1,11 @@
+html,
 body {
   height: 100%;
-  background-image: url("../img/background.png");
   overflow: hidden;
+}
+
+body {
+  background-image: url("../img/background.png");
 }
 
 .container {
@@ -39,7 +43,7 @@ body {
 
 .beatsRow {
   display: grid;
-  grid-template-columns: 70px repeat(32, 1fr);
+  grid-template-columns: 50px repeat(32, 1fr);
   grid-gap: 1px;
 }
 
