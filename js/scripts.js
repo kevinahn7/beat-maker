@@ -119,8 +119,6 @@ function barBounce() {
   }
 }
 
-let letItLoop = false;
-
 function Beat(name, beat){
   this.name = name;
   this.beat = [];
@@ -143,6 +141,7 @@ Beat.prototype.savedArray = function (){
   this.savedBeats.push(this.beat);
 }
 
+let letItLoop = false;
 
 $(document).ready(function() {
   var beatWan = new Beat();
@@ -170,15 +169,15 @@ $(document).ready(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
   });
 
+
+
   $(".saveButton").click(function(){
     beatWan.saveBeat();
     beatWan.savedArray();
     $(".savedBeats").show();
-      $("#listOfBeats").append("<li value='" + saved + "'>"+ saved + " beat" + "</li>");
+      $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
       saved++;
-      console.log(beatWan);
   });
-
 
   $("#listOfBeats").on('click', 'li', function(){
     var chosenBeat = beatWan.savedBeats[$(this).val()];
@@ -189,6 +188,8 @@ $(document).ready(function() {
       }
     });
   });
+
+
 
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");

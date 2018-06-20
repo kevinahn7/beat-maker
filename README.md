@@ -13,6 +13,8 @@
 | **Program allows user to select a "bar", returning a sound each time the loop passes over the selected "bar"** | Click: "Snare, bar 4" | Output: "Snare audio on fourth bar every 32 bars." |
 | **Program allows user to select multiple "bars", returning a sound each time the loop passes over the selected "bars"** | Click: "Snare: bar 4, bar 8 " | Output: "Snare audio on bar 4 and bar 8 every 32 bars." |
 | **Program allows user to select multiple "bars" on multiple instruments, returning indicated audio samples for each selected "bar" as loop passes** | Click: "Snare: bar 4; Bass: bar 8" | Output: "Snare audio on bar 4, Bass audio on bar 8." |
+| **Program allows user to save a created "beat" containing multiple "bars" on multiple instruments, and allows users to replay created "beat".** | Click: "Snare: bar 4; Bass: bar 8; Save: Beat 1; Select Beat 1" | Output: "Snare audio on bar 4, Bass audio on bar 8." |
+| **Program allows user to save multiple created "beats", and allows users to choose which created "beat" to replay.** | Click: "Beat 1: Snare: bar 4; Bass: bar 8; Save. Beat 2: Snare: bar 6; Bass: bar 5; Bongo: bar 7, Save. Play "Beat 1"" | Output: "Snare audio on bar 6, Bass audio on bar 5, Bongo audio on bar 7." |
 
 ## Setup
 
