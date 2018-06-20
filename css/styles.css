@@ -118,14 +118,13 @@ body {
   border-radius: 50%;
   border: 5px #575756 solid;
   background-color: white;
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
   max-width: 500px;
 }
 
 .bars div {
   width: 9%;
-  /* background-color: lightgray; */
   height: 0;
   position: absolute;
   bottom: 0;

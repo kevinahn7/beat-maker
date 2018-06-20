@@ -24,7 +24,6 @@ function playOnBeat(element, time, instrument) {
     }, time);
   }
 }
-
 // loops that iterate through each row - ideally should be refactored into just one function that can be called on for each instrument.
 function loop1() {
   // letItLoop was set as a global boolean so we could tell script to stop everything on pause clicks
@@ -63,7 +62,6 @@ function loop3() {
   });
 };
 // end of trio of ghetto loops
-
 
 function loops() {
   if(letItLoop === true) {
@@ -146,7 +144,6 @@ $(document).ready(function() {
   $(".spot").mouseout(function() {
     $(this).parent().animate({
       "opacity": "1"
-
     }, 0);
   });
 
