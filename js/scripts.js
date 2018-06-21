@@ -142,14 +142,17 @@ Beat.prototype.savedArray = function (){
 
 let letItLoop = false;
 
+
+
+
+
 $(document).ready(function() {
 
 
 
   var beatWan = new Beat();
   var saved = 0;
-
-
+  var mouseDownFired = false;
 
 
 
@@ -179,8 +182,6 @@ $(document).ready(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
   });
 
-
-
   $(".saveButton").click(function(){
     if(!$(".spot").hasClass("selected")){
       $(".modal").addClass("activateModal")
@@ -206,19 +207,12 @@ $(document).ready(function() {
 
 
 
+
+
+
+
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");
-  });
-
-  $(".spot").hover(function() {
-    $(this).parent().animate({
-      "opacity": ".9"
-    }, 0);
-  });
-  $(".spot").mouseout(function() {
-    $(this).parent().animate({
-      "opacity": "1"
-    }, 0);
   });
 
   $(".spot").mousedown(function() {

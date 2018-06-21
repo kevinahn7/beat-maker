@@ -68,6 +68,10 @@ body {
   filter: brightness(90%);
 }
 
+.instrumentRow:hover {
+  filter: opacity(.9);
+}
+
 .buttons {
   text-align: center;
 }
