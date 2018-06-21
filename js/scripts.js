@@ -220,28 +220,32 @@ $(document).ready(function() {
       $(".spot").mouseenter(function() {
         $(this).removeClass("selected snare bass hihat bongo keys");
         $(document).mouseup(function() {
-          $(".spot").off('mouseenter');
+          $(".spot").off("mouseenter");
         })
       });
       $(".spot").mouseleave(function() {
         $(this).removeClass("selected snare bass hihat bongo keys");
         $(document).mouseup(function() {
-          $(".spot").off('mouseleave');
+          $(".spot").off("mouseleave");
         })
       });
     } else if (!$(this).hasClass("selected")) {
       $(".spot").mouseenter(function() {
         $(this).addClass("selected snare bass hihat bongo keys");
         $(document).mouseup(function() {
-          $(".spot").off('mouseenter');
+          $(".spot").off("mouseenter");
         })
       });
       $(".spot").mouseleave(function() {
         $(this).addClass("selected snare bass hihat bongo keys");
         $(document).mouseup(function() {
-          $(".spot").off('mouseleave');
+          $(".spot").off("mouseleave");
         })
       });
     }
+    $(document).mouseup(function() {
+      $(".spot").off("mouseenter");
+      $(".spot").off("mouseleave");
+    });
   });
 });
