@@ -207,7 +207,6 @@ body {
   display:none;
 }
 
-.strikethrough{
-  text-decoration: line-through;
-  text-decoration-color: red;
+.delete {
+  display: none
 }

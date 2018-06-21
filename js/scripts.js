@@ -198,7 +198,7 @@ $(document).ready(function() {
       }
     });
     $(".complete").click(function(){
-      $(this).parent().toggleClass("delete");
+      $(this).parent().remove();
       // $(this).toggleClass("complete").parent.remove("li");
     });
   });
