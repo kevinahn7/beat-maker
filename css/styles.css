@@ -200,3 +200,14 @@ body {
 .savedBeats {
   display: none;
 }
+
+.complete {
+  height: 23px;
+  width: 23px;
+  display:none;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}

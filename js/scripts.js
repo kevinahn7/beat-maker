@@ -183,20 +183,30 @@ $(document).ready(function() {
       beatWan.saveBeat();
       beatWan.savedArray();
       $(".savedBeats").show();
-      $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
+      $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "<img src=\"img/trash.png\" class=\"complete cursor\"></li>");
       saved++;
     }
   });
 
   $("#listOfBeats").on('click', 'li', function(){
     var chosenBeat = beatWan.savedBeats[$(this).val()];
+    $(this).children(".complete").toggle();
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
     $(".beatsAll .spot").each(function(i){
         if(chosenBeat[i] === "selected") {
         $(this).addClass("selected snare bass hihat bongo keys");
       }
     });
+    $(".complete").last().click(function(){
+      $(this).parent().toggleClass("strikethrough");
+      $(this).toggle();
+      $(this)children().toggleClass(".complete");
+
+    });
   });
+
+
+
 
 
 
