@@ -248,3 +248,52 @@ li {
 .trash {
   display: none;
 }
+
+/* changes since */
+
+.wantop {
+  width: 150%;
+  top: -100px;
+  right: 33px;
+  position: relative;
+}
+
+#saveIcons {
+  position: relative;
+  margin-top: -59px;
+  margin-bottom: 10%;
+}
+
+#rightAlign {
+  position: absolute;
+  right: 5%;
+}
+
+#rightAlign p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.saved {
+  height: 38px;
+  width: 38px;
+  background-color: lightgrey;
+  opacity: .8;
+  border-radius: 10%;
+  border-style: ridge;
+  margin-bottom: 25%;
+  margin-right: -20px;
+}
+
+.wan {
+  width: 100%;
+}
+
+.boxed {
+  background-color: lightpink;
+}
+
+/* making image elements and space between buttons unhighlightable, since drag select option can cause that as side effect */
+img, .buttons {
+  -webkit-user-select: none;
+}

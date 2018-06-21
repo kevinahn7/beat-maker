@@ -1,51 +1,41 @@
 function playOnBeat(element, time, instrument) {
   if($(element).hasClass('selected')) {
     setTimeout(function() {
-      if(instrument === "snare") {
-        var origAudio1 = document.getElementById("snareSound");
-        var newAudio1 = origAudio1.cloneNode();
-        if (letItLoop === true) {
-          newAudio1.play();
-        }
-      } else if(instrument === "bass") {
-        var origAudio2 = document.getElementById("bassSound");
-        var newAudio2 = origAudio2.cloneNode();
-        if (letItLoop === true) {
-          newAudio2.play();
-        }
-      } else if(instrument === "hihat") {
-        var origAudio3 = document.getElementById("hihatSound");
-        var newAudio3 = origAudio3.cloneNode();
-        if (letItLoop === true) {
-          newAudio3.play();
-        }
-      } else if(instrument === "bongo") {
+      if (instrument === "snare") {
+        var origAudio = document.getElementById("snareSound");
+        var newAudio = origAudio.cloneNode();
+
+      } else if (instrument === "bass") {
+        var origAudio = document.getElementById("bassSound");
+        var newAudio = origAudio.cloneNode();
+
+      } else if (instrument === "hihat") {
+        var origAudio = document.getElementById("hihatSound");
+        var newAudio = origAudio.cloneNode();
+
+      } else if (instrument === "bongo") {
         var origAudio4 = document.getElementById("bongoSound");
-        var newAudio4 = origAudio4.cloneNode();
-        if (letItLoop === true) {
-          newAudio4.play();
-        }
-      } else if(instrument === "keys") {
-        var origAudio5 = document.getElementById("keysSound");
-        var newAudio5 = origAudio5.cloneNode();
-        if (letItLoop === true) {
-          newAudio5.play();
-        }
+        var newAudio = origAudio.cloneNode();
+
+      } else if (instrument === "keys") {
+        var origAudio = document.getElementById("keysSound");
+        var newAudio = origAudio.cloneNode();
+      }
+      if (letItLoop === true) {
+        newAudio.play();
       }
     }, time);
   }
 }
 function loop1() {
-  if (letItLoop === true) {
-    $("#snare .spot").each(function(i) {
-      $(this).delay(100 * i).animate({
-        opacity: .1,
-      }, 100).animate({
-        opacity: 1,
-      }, 0);
-      playOnBeat(this, 100 * i, "snare");
-    });
-  }
+  $("#snare .spot").each(function(i) {
+    $(this).delay(100 * i).animate({
+      opacity: .1,
+    }, 100).animate({
+      opacity: 1,
+    }, 0);
+    playOnBeat(this, 100 * i, "snare");
+  });
 };
 function loop2() {
   $("#bass .spot").each(function(i) {
@@ -136,11 +126,12 @@ Beat.prototype.saveBeat = function (){
   this.beat = beatArray;
 }
 
-Beat.prototype.savedArray = function (){
-  this.savedBeats.push(this.beat);
+Beat.prototype.savedArray = function (val){
+  this.savedBeats[val] = this.beat;
 }
 
 let letItLoop = false;
+
 $(document).ready(function() {
   var beats = new Beat();
   var saved = 0;
@@ -172,15 +163,47 @@ $(document).ready(function() {
 
   $(".saveButton").click(function(){
     if(!$(".spot").hasClass("selected")){
-      $(".modal").addClass("activateModal")
+      
     } else {
-      $(".modal").removeClass("activateModal")
       beats.saveBeat();
       beats.savedArray();
-      $(".savedBeats").show();
-      $("#listOfBeats").append("<li value='" + saved + "'>"+ "Beat " + (saved + 1) +" <img src=\"img/trash.png\" class=\"trash icon\"></li>");
+      // $(".savedBeats").show();
+      // $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
+      $("[value=" + saved + "]").addClass("boxed");
       saved++;
     }
+
+
+  });
+
+  $(".saved").click(function() {
+    var val = $(this).val();
+    if($(this).hasClass("boxed")) {
+      console.log(saved);
+      var chosenBeat = beats.savedBeats[$(this).val()];
+      $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
+      $(".beatsAll .spot").each(function(i){
+          if(chosenBeat[i] === "selected") {
+          $(this).addClass("selected snare bass hihat bongo keys");
+        }
+      });
+    } else {
+      if(!$(".spot").hasClass("selected")){
+        alert("make a beat before saving")
+      } else {
+        beats.saveBeat();
+        beats.savedArray(val);
+        // $(".savedBeats").show();
+        // $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
+        $(this).addClass("boxed");
+        saved++;
+      }
+    }
+  });
+
+  $(".saved").on('contextmenu', function(e) {
+    e.preventDefault();
+    $(this).removeClass("boxed");
   });
 
   $("#listOfBeats").on('click', 'li', function(){
