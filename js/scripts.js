@@ -151,6 +151,11 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
   $(".playButton").click(function() {
     $(".playButton").toggle();
     $(".pauseButton").toggle();
@@ -178,8 +183,9 @@ $(document).ready(function() {
 
   $(".saveButton").click(function(){
     if(!$(".spot").hasClass("selected")){
-      alert("make a beat before saving")
+      $(".modal").addClass("activateModal")
     } else {
+      $(".modal").removeClass("activateModal")
       beatWan.saveBeat();
       beatWan.savedArray();
       $(".savedBeats").show();

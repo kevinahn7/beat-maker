@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
   <audio src="sounds/snare-edit.m4a" preload="auto" id="snareSound"></audio>
-  <audio src="sounds/edm-kick-01.wav" preload="auto" id="bassSound"></audio>
+  <audio src="sounds/loudbass.m4a" preload="auto" id="bassSound"></audio>
   <audio src="sounds/quiethihat.m4a" preload="auto" id="hihatSound"></audio>
   <audio src="sounds/bongo.m4a" preload="auto" id="bongoSound"></audio>
   <audio src="sounds/cowbell-808.wav" preload="auto" id="keysSound"></audio>
@@ -248,8 +249,34 @@
         <button class="btn btn-info playButton"><img class="play" src="img/play.svg" alt="picture of a play icon"></button>
         <button class="btn btn-info pauseButton"><img class="pause" src="img/pause.png" alt="picture of a pause icon"></button>
         <button class="btn btn-warning clearButton"><img class="clear" src="img/clear.png" alt="picture of an X to clear"></button>
-        <button class="btn btn-danger saveButton"><img class="save" src="img/save.png" alt="picture of a save icon"></button>
+        <button class="btn btn-danger saveButton" data-toggle="modal" data-target=".activateModal"><img class="save" src="img/save.png" alt="picture of a save icon"></button>
       </div>
+
+
+
+
+
+      <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Empty Grid</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              You have to fill it out before you can save it!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="recordImage">
         <img src="img/record.png" class="record">
       </div>
