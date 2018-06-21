@@ -203,4 +203,19 @@ body {
 
 .savedBeats {
   display: none;
+  position: absolute;
+}
+
+#listOfBeats {
+  height: 150px;
+  overflow: auto;
+  list-style-type: none;
+}
+
+li {
+  height: 1.5em;
+}
+
+.trash {
+  display: none;
 }
