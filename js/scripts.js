@@ -136,8 +136,8 @@ Beat.prototype.saveBeat = function (){
   this.beat = beatArray;
 }
 
-Beat.prototype.savedArray = function (){
-  this.savedBeats.push(this.beat);
+Beat.prototype.savedArray = function (val){
+  this.savedBeats[val] = this.beat;
 }
 
 let letItLoop = false;
@@ -174,6 +174,7 @@ $(document).ready(function() {
     if(!$(".spot").hasClass("selected")){
       $(".modal").addClass("activateModal")
     } else {
+      console.log(beats);
       $(".modal").removeClass("activateModal")
       beats.saveBeat();
       beats.savedArray();
@@ -183,19 +184,49 @@ $(document).ready(function() {
     }
   });
 
-  $("#listOfBeats").on('click', 'li', function(){
-    var chosenBeat = beats.savedBeats[$(this).val()];
-    $(this).children().toggle();
-    $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
-    $(".beatsAll .spot").each(function(i){
-        if(chosenBeat[i] === "selected") {
-        $(this).addClass("selected snare bass hihat bongo keys");
+  $(".saved").click(function() {
+    var val = $(this).val();
+    if($(this).hasClass("boxed")) {
+      var chosenBeat = beats.savedBeats[$(this).val()];
+      $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
+      $(".beatsAll .spot").each(function(i){
+          if(chosenBeat[i] === "selected") {
+          $(this).addClass("selected snare bass hihat bongo keys");
+        }
+      });
+    } else {
+      if(!$(".spot").hasClass("selected")){
+        $(".saveButton").click();
+      } else {
+        beats.saveBeat();
+        beats.savedArray(val);
+        // $(".savedBeats").show();
+        // $("#listOfBeats").append("<li value='" + saved + "'>"+ "beat " + (saved + 1) + "</li>");
+        $(this).addClass("boxed");
+        saved++;
       }
-    });
-    $(".trash").click(function() {
-      $(this).parent().remove();
-    })
+    }
+    $(".modal").removeClass("activateModal")
   });
+
+  $(".saved").on('contextmenu', function(e) {
+  e.preventDefault();
+  $(this).removeClass("boxed");
+});
+
+  // $("#listOfBeats").on('click', 'li', function(){
+  //   var chosenBeat = beats.savedBeats[$(this).val()];
+  //   $(this).children().toggle();
+  //   $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
+  //   $(".beatsAll .spot").each(function(i){
+  //       if(chosenBeat[i] === "selected") {
+  //       $(this).addClass("selected snare bass hihat bongo keys");
+  //     }
+  //   });
+  //   $(".trash").click(function() {
+  //     $(this).parent().remove();
+  //   })
+  // });
 
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");
@@ -234,4 +265,5 @@ $(document).ready(function() {
       $(".spot").off("mouseleave");
     });
   });
+
 });
