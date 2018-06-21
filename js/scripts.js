@@ -141,23 +141,9 @@ Beat.prototype.savedArray = function (){
 }
 
 let letItLoop = false;
-
-
-
-
-
 $(document).ready(function() {
-
-
-
-  var beatWan = new Beat();
+  var beats = new Beat();
   var saved = 0;
-  var mouseDownFired = false;
-
-
-
-
-
 
   $(".playButton").click(function() {
     $(".playButton").toggle();
@@ -167,6 +153,7 @@ $(document).ready(function() {
     loops();
     $(".record, .smallRecord").addClass("fa-spin");
   });
+
   $(".pauseButton").click(function() {
     $(".playButton").attr("disabled", "disabled");
     $(".playButton").toggle();
@@ -178,6 +165,7 @@ $(document).ready(function() {
     }, 3200)
     $(".record, .smallRecord").removeClass("fa-spin");
   });
+
   $(".clearButton").click(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
   });
@@ -187,8 +175,8 @@ $(document).ready(function() {
       $(".modal").addClass("activateModal")
     } else {
       $(".modal").removeClass("activateModal")
-      beatWan.saveBeat();
-      beatWan.savedArray();
+      beats.saveBeat();
+      beats.savedArray();
       $(".savedBeats").show();
       $("#listOfBeats").append("<li value='" + saved + "'>"+ "Beat " + (saved + 1) +" <img src=\"img/trash.png\" class=\"trash icon\"></li>");
       saved++;
@@ -196,7 +184,7 @@ $(document).ready(function() {
   });
 
   $("#listOfBeats").on('click', 'li', function(){
-    var chosenBeat = beatWan.savedBeats[$(this).val()];
+    var chosenBeat = beats.savedBeats[$(this).val()];
     $(this).children().toggle();
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
     $(".beatsAll .spot").each(function(i){
@@ -208,12 +196,6 @@ $(document).ready(function() {
       $(this).parent().remove();
     })
   });
-
-
-
-
-
-
 
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");
