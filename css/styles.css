@@ -207,7 +207,7 @@ body {
   display:none;
 }
 
-.strikethrough {
+.strikethrough{
   text-decoration: line-through;
   text-decoration-color: red;
 }

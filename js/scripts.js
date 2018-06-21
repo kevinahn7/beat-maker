@@ -197,11 +197,9 @@ $(document).ready(function() {
         $(this).addClass("selected snare bass hihat bongo keys");
       }
     });
-    $(".complete").last().click(function(){
-      $(this).parent().toggleClass("strikethrough");
-      $(this).toggle();
-      $(this)children().toggleClass(".complete");
-
+    $(".complete").click(function(){
+      $(this).parent().toggleClass("delete");
+      // $(this).toggleClass("complete").parent.remove("li");
     });
   });
 
