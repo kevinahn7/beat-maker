@@ -78,7 +78,6 @@ function barBounce() {
         height: (Math.floor(Math.random() * 650)) + "px",
         opacity: (Math.random() + .2)
       }, 350);
-
     });
     setTimeout(barBounce, 400);
   } else {

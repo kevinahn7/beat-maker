@@ -191,6 +191,8 @@ body {
   width: 9%;
   height: 0;
   z-index: -1;
+  position: absolute;
+  bottom: 0;
 }
 
 .bar1 {
