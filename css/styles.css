@@ -124,8 +124,9 @@ body {
   position: absolute;
   z-index: 1;
   bottom: 125%;
+  right: 0;
   margin-left: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -189,8 +190,6 @@ body {
 .bars div {
   width: 9%;
   height: 0;
-  position: absolute;
-  bottom: 0;
   z-index: -1;
 }
 
@@ -232,20 +231,6 @@ body {
 .bar8 {
   left: 80%;
   background-color: #008ED1
-}
-
-#listOfBeats {
-  height: 150px;
-  overflow: auto;
-  list-style-type: none;
-}
-
-li {
-  height: 1.5em;
-}
-
-.trash {
-  display: none;
 }
 
 #saveIcons {

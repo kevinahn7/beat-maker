@@ -156,9 +156,6 @@ $(document).ready(function() {
     }
   });
 
-
-
-
   $(".saved").click(function() {
     var val = $(this).val();
     if($(this).hasClass("boxed")) {
@@ -183,13 +180,9 @@ $(document).ready(function() {
   });
 
   $(".saved").on('contextmenu', function(e) {
-  e.preventDefault();
-  $(this).removeClass("boxed");
-});
-
-
-
-
+    e.preventDefault();
+    $(this).removeClass("boxed");
+  });
 
   $(".spot").click(function() {
     $(this).toggleClass("selected snare bass hihat bongo keys");
