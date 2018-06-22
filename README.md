@@ -31,7 +31,7 @@
 The link to the repository  
 *https://github.com/kevinahn7/beat-maker  
 The link to the live site  
-*https://kevinahn7.github.io/beat-maker  
+*https://kevinahn7.github.io/beat-maker/  
 
 ## License
 
