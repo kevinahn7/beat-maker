@@ -144,16 +144,7 @@ $(document).ready(function() {
   });
 
   $(".saveButton").click(function(){
-    if(!$(".spot").hasClass("selected")){
-      $(".modal").addClass("activateModal")
-    } else {
-      $(".modal").removeClass("activateModal")
-      beats.saveBeat();
-      beats.savedArray();
-      $(".savedBeats").show();
-      $("#listOfBeats").append("<li value='" + saved + "'>"+ "Beat " + (saved + 1) +" <img src=\"img/trash.png\" class=\"trash icon\"></li>");
-      saved++;
-    }
+    $(".modal").addClass("activateModal");
   });
 
   $(".saved").click(function() {
