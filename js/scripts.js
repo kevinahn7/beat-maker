@@ -1,22 +1,8 @@
 function playOnBeat(element, time, instrument) {
   if($(element).hasClass('selected')) {
     setTimeout(function() {
-      if(instrument === "snare") {
-        var origAudio1 = document.getElementById("snareSound");
-        var newAudio = origAudio1.cloneNode();
-      } else if(instrument === "bass") {
-        var origAudio2 = document.getElementById("bassSound");
-        var newAudio = origAudio2.cloneNode();
-      } else if(instrument === "hihat") {
-        var origAudio3 = document.getElementById("hihatSound");
-        var newAudio = origAudio3.cloneNode();
-      } else if(instrument === "bongo") {
-        var origAudio4 = document.getElementById("bongoSound");
-        var newAudio = origAudio4.cloneNode();
-      } else if(instrument === "keys") {
-        var origAudio5 = document.getElementById("keysSound");
-        var newAudio = origAudio5.cloneNode();
-      }
+      var origAudio = document.getElementById(instrument + "Sound");
+      var newAudio = origAudio.cloneNode();
       if (letItLoop === true) {
         newAudio.play();
       }
@@ -127,6 +113,7 @@ Beat.prototype.savedArray = function (val){
 }
 
 let letItLoop = false;
+
 $(document).ready(function() {
   var beats = new Beat();
   var saved = 0;
