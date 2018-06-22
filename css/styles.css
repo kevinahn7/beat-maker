@@ -255,12 +255,6 @@ li {
 
 /* changes since */
 
-.wantop {
-  width: 150%;
-  top: -100px;
-  right: 33px;
-  position: relative;
-}
 
 #saveIcons {
   position: relative;
@@ -294,10 +288,14 @@ li {
 }
 
 .boxed {
-  background-color: lightpink;
+  background-color: lightblue;
 }
 
-/* making image elements and space between buttons unhighlightable, since drag select option can cause that as side effect */
+/*making image elements and space between buttons unhighlightable, since drag select option can cause that as side effect */
 img, .buttons {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
   -webkit-user-select: none;
+  -o-user-select: none;
 }

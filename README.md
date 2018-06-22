@@ -1,6 +1,6 @@
 # Project Title
 
-#### Epicodus Intro to Programming: Group Project, 06/18/18
+#### Epicodus Intro to Programming: Group Project, 06/18/18 - 6/21/2018
 
 #### By Kevin Ahn, Kyle Parsons, Devin Mounts, David Ngo, and Annie Shin
 
