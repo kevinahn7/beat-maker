@@ -28,7 +28,7 @@
 
 ## Links
 
-*https://github.com/kevinahn7/beat-maker/tree/master
+*https://github.com/kevinahn7/beat-maker
 
 ## License
 
