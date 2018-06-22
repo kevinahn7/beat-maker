@@ -241,30 +241,10 @@
         <span class="tooltips"><button class="btn btn-warning clearButton"><img class="clear" src="img/clear.png" alt="picture of an X to clear"></button><span class="tooltiptext">Clear</span></span>
         <span class="tooltips"><button class="btn btn-danger saveButton" data-toggle="modal" data-target=".activateModal"><img class="save" src="img/save.png" alt="picture of a save icon"></button><span class="tooltiptext">Save</span></span>
       </div>
-
-
-      <div id="saveIcons">
-        <div id="rightAlign">
-          <span class="tooltips"><p class="ml-2">Save your beats!</p><span class="tooltiptext">Left click to save. Right click to delete.</span></span>
-
-          <div class="row list-unstyled">
-            <div class="col">
-              <li value="0" class="saved"></li>
-              <li value="3" class="saved"></li>
-              <li value="6" class="saved"></li>
-            </div>
-            <div class="col">
-              <li value="1" class="saved"></li>
-              <li value="4" class="saved"></li>
-              <li value="7" class="saved"></li>
-            </div>
-            <div class="col">
-              <li value="2" class="saved"></li>
-              <li value="5" class="saved"></li>
-              <li value="8" class="saved"></li>
-            </div>
-          </div>
-        </div>
+      <div class="savedBeats">
+        <h2>Saved beats:</h2>
+        <ul id="listOfBeats">
+        </ul>
       </div>
       <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -276,7 +256,7 @@
               </button>
             </div>
             <div class="modal-body">
-            Create a beat before saving!
+              You have to fill it out before you can save it!
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
