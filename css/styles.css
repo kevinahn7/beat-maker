@@ -126,12 +126,30 @@ body {
   bottom: 125%;
   right: 0;
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.tooltips .tooltiptext::after {
+.tooltips .tooltiptextsave {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  margin-left: 10px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltips .tooltiptext::after,
+.tooltips .tooltiptextsave::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -142,7 +160,8 @@ body {
   border-color: #555 transparent transparent transparent;
 }
 
-.tooltips:hover .tooltiptext {
+.tooltips:hover .tooltiptext,
+.tooltips:hover .tooltiptextsave {
   visibility: visible;
   opacity: 1;
 }
