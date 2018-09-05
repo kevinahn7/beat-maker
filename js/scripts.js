@@ -9,64 +9,25 @@ function playOnBeat(element, time, instrument) {
     }, time);
   }
 }
-function loop1() {
-  $("#snare .spot").each(function(i) {
+
+function loop(instrument) {
+  $("#" + instrument +" .spot").each(function(i) {
     $(this).delay(100 * i).animate({
       opacity: .1,
     }, 100).animate({
       opacity: 1,
     }, 0);
-    playOnBeat(this, 100 * i, "snare");
-  });
-};
-function loop2() {
-  $("#bass .spot").each(function(i) {
-    $(this).delay(100 * i).animate({
-      opacity: .1,
-    }, 100).animate({
-      opacity: 1,
-    }, 0);
-    playOnBeat(this, 100 * i, "bass");
-  });
-};
-function loop3() {
-  $("#hihat .spot").each(function(i) {
-    $(this).delay(100 * i).animate({
-      opacity: .1,
-    }, 100).animate({
-      opacity: 1,
-    }, 0);
-    playOnBeat(this, 100 * i, "hihat");
-  });
-};
-function loop4() {
-  $("#bongo .spot").each(function(i) {
-    $(this).delay(100 * i).animate({
-      opacity: .1,
-    }, 100).animate({
-      opacity: 1,
-    }, 0);
-    playOnBeat(this, 100 * i, "bongo");
-  });
-};
-function loop5() {
-  $("#keys .spot").each(function(i) {
-    $(this).delay(100 * i).animate({
-      opacity: .1,
-    }, 100).animate({
-      opacity: 1,
-    }, 0);
-    playOnBeat(this, 100 * i, "keys");
+    playOnBeat(this, 100 * i, instrument);
   });
 };
 
 function loops() {
   if(letItLoop === true) {
-    loop1();
-    loop2();
-    loop3();
-    loop4();
-    loop5();
+    loop("snare");
+    loop("bass");
+    loop("hihat");
+    loop("bongo");
+    loop("keys");
     setTimeout(loops, 3200);
   }
 }
@@ -95,7 +56,7 @@ function Beat() {
   this.savedBeats = []
 }
 
-Beat.prototype.saveBeat = function (){
+Beat.prototype.saveBeat = function () {
   var beatArray = [];
   $(".beatsAll .spot").each(function(){
     if($(this).hasClass("selected")){
@@ -115,7 +76,6 @@ let letItLoop = false;
 
 $(document).ready(function() {
   var beats = new Beat();
-  var saved = 0;
 
   $(".playButton").click(function() {
     $(".playButton").toggle();
@@ -142,7 +102,7 @@ $(document).ready(function() {
     $(".beatsAll .spot").removeClass("selected snare bass hihat bongo keys");
   });
 
-  $(".saveButton").click(function(){
+  $(".saveButton").click(function() {
     $(".modal").addClass("activateModal");
   });
 
@@ -157,13 +117,12 @@ $(document).ready(function() {
         }
       });
     } else {
-      if(!$(".spot").hasClass("selected")){
+      if(!$(".spot").hasClass("selected")) {
         $(".saveButton").click();
       } else {
         beats.saveBeat();
         beats.savedArray(val);
         $(this).addClass("boxed");
-        saved++;
       }
     }
     $(".modal").removeClass("activateModal")
@@ -195,10 +154,10 @@ $(document).ready(function() {
         $(this).addClass("selected snare bass hihat bongo keys");
       });
     }
+    
     $(document).mouseup(function() {
       $(".spot").off("mouseenter");
       $(".spot").off("mouseleave");
     });
   });
-
 });

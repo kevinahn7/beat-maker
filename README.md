@@ -2,9 +2,9 @@
 
 #### Epicodus Intro to Programming: Group Project, 06/18/18 - 6/21/2018
 
-#### By Kevin Ahn, Kyle Parsons, Devin Mounts, David Ngo, and Annie Shin
+#### By Kevin Ahn, Kyle Parsons, Devin Mounts, David Ngo and Annie Shin
 
-## A super sweet beatmaker that will take you from zero to skrillex in a matter of minutes.
+## A web app to make, play and save beats locally using audio files of different instruments.
 
 ### Specs
 | Spec | Input | Output |
@@ -19,7 +19,7 @@
 ## Setup
 
 1. Clone the repo into an empty repository using git clone [url]
-2. Open the index.html file to enjoy our creation
+2. Open the index.html file to open the web app
 
 ## Technologies Used
 
@@ -37,4 +37,4 @@ The link to the live site
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Epicodus Dream Team**
+Copyright (c) 2018 **Kevin Ahn, Kyle Parsons, Devin Mounts, David Ngo and Annie Shin**
