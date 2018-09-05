@@ -1,4 +1,4 @@
-# Project Title
+# Beat Maker
 
 #### Epicodus Intro to Programming: Group Project, 06/18/18 - 6/21/2018
 
