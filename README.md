@@ -27,7 +27,7 @@
 * jQuery 3.3.1
 
 ## Screen Shot
-![Screen shot of the web app](img/screen-shot.png)
+![Screen shot of the web app](img/screen-shot.PNG)
 
 ## Links
 
