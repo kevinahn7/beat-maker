@@ -26,6 +26,9 @@
 * Bootstrap 4.1.1
 * jQuery 3.3.1
 
+## Screen Shot
+![Screen shot of the web app](img/screen-shot.png)
+
 ## Links
 
 The link to the repository  
